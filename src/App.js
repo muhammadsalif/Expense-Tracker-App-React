@@ -3,7 +3,6 @@ import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TransactionContext } from "./context/transContext";
-import { TransactionProvider } from "./context/transContext";
 
 function App() {
   let { transactions } = useContext(TransactionContext);
