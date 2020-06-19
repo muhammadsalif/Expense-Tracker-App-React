@@ -1,6 +1,6 @@
 const TransactionReducer = (state, action) => {
-  switch (aciton.type) {
-    case "ADD": {
+  switch (action.type) {
+    case "ADD_TRANSACTION": {
       return [action.payload, ...state];
     }
     default:

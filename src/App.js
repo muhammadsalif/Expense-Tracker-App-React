@@ -2,13 +2,17 @@ import React, { useContext } from "react";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { TransactionContext } from "./context/transContext";
+import {
+  TransactionContext,
+  TransactionProvider,
+} from "./context/transContext";
 
 function App() {
   let transactions = useContext(TransactionContext);
+  console.log(transactions);
 
   return (
-    <TransactionContext.Provider>
+    <TransactionProvider>
       <div className="container mt-4">
         {/* Header component start */}
         <h1 className="text-center">Expense Tracker</h1>
@@ -90,7 +94,7 @@ function App() {
 
         {/* Transaction  component end*/}
       </div>
-    </TransactionContext.Provider>
+    </TransactionProvider>
   );
 }
 
