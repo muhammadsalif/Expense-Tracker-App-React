@@ -1,7 +1,47 @@
+body {
+  background-color: #1d1e1e !important;
+}
+
 .container {
   max-width: 400px !important;
   min-height: 450px !important;
+  /* max-height: 100vh !important; */
   margin: 0 auto !important;
-  background-color: #efefef !important;
+  /* background-color: #0080ff !important; */
+  background-color: #4286f5 !important;
   box-shadow: 0px 0px 10px gray !important;
+  border-radius: 8% !important;
+}
+
+.myFont {
+  font-family: "Suez One", serif;
+  /* background-color: #fab806 !important; */
+}
+
+.myFont2 {
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.myFont3 {
+  font-family: "Itim", cursive;
+}
+
+.myFont4 {
+  font-family: "Lobster", cursive;
+}
+
+.myFont5 {
+  font-family: "Metal Mania", cursive;
+}
+
+.myFont6 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font-size {
+  font-size: 1.2rem !important;
+}
+
+.mybg {
+  background-color: #81c4e8;
 }

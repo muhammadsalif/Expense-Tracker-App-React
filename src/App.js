@@ -4,6 +4,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TransactionContext } from "./context/transContext";
 
+import { Header } from "./components/Header";
+
 function App() {
   let { transactions } = useContext(TransactionContext);
   let { addTransaction } = useContext(TransactionContext);
@@ -16,6 +18,8 @@ function App() {
       amount: Number(newAmount),
       desc: newDesc,
     });
+    setDesc("");
+    setAmount(0);
   };
 
   const getIncome = () => {
@@ -35,47 +39,56 @@ function App() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container py-3 my-4">
       {/* Header component start */}
-      <h1 className="text-center">Expense Tracker</h1>
+      <Header></Header>
       {/* Header component End */}
 
       {/* Balance component start */}
       <h3>
-        your Balances <br /> ${getIncome() + getExpense()}
+        <span className="text-capitalize   myFont">your balance</span> <br />{" "}
+        <span class="text-dark myFont3">${getIncome() + getExpense()}</span>
       </h3>
       {/* Balance component End */}
 
       {/* Income expense component start */}
-      <div className="d-flex justify-content-around border bg-white">
+      <div className="d-flex justify-content-around rounded mybg">
         <h3>
-          income <br /> ${getIncome()}
+          <span className="text-capitalize  myFont2">income</span>
+          <br />
+          <span className="text-primary myFont2">${getIncome()}</span>
         </h3>
         <h3>
-          expense <br />${getExpense()}
+          <span class="text-capitalize myFont2">expense</span> <br />
+          <span className="text-danger myFont2">${getExpense()}</span>
         </h3>
       </div>
 
       {/* Income expense component end*/}
 
       {/* History  component start*/}
-      <h3>History</h3>
-      <hr></hr>
-      <ul className="list-group border">
-        {transactions.map((transObj, ind) => {
-          return (
-            <li
-              key={ind}
-              className="list-group-item mb-2 d-flex justify-content-between align-items-center"
-            >
-              <span>{transObj.desc}</span>
-              <span className="badge badge-primary badge-pill py-2 px-3">
-                ${transObj.amount}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
+      <div class="mt-3">
+        <h3 className="pb-2 border-secondary myFont border-bottom">History</h3>
+        <ul className="list-group mt-3">
+          {transactions.map((transObj, ind) => {
+            return (
+              <li
+                key={ind}
+                className="list-group-item mb-2 d-flex justify-content-between align-items-center py-1"
+              >
+                <span className="myFont font-size">{transObj.desc}</span>
+                <span
+                  className={`\$badge badge-${
+                    transObj.amount > 0 ? "primary " : "danger "
+                  } badge-pill py-1 px-3 my-1 myFont2 font-size`}
+                >
+                  ${transObj.amount}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       {/* History  component end*/}
 
@@ -86,8 +99,9 @@ function App() {
       <form onSubmit={handleAddition}>
         <div className="form-group">
           <label className="w-100">
-            Text
+            Enter description
             <input
+              value={newDesc}
               className="form-control"
               htmlFor="text"
               placeholder="Enter Text..."
@@ -99,8 +113,9 @@ function App() {
 
         <div className="form-group ">
           <label className="w-100">
-            Amount
+            enter Amount
             <input
+              value={newAmount}
               className="form-control "
               htmlFor="amount"
               placeholder="Enter Amount..."
@@ -109,11 +124,15 @@ function App() {
             ></input>
           </label>
         </div>
-
-        <button type="submit" className="btn btn-primary btn-block">
-          {" "}
-          Add Transaction{" "}
-        </button>
+        <span className="d-flex justify-content-center">
+          <button
+            type="submit"
+            className="btn btn-warning text-capitalize myFont font-size px-5 py-2 "
+          >
+            {" "}
+            Add Transaction{" "}
+          </button>
+        </span>
       </form>
 
       {/* Transaction  component end*/}
