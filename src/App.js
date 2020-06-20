@@ -6,6 +6,7 @@ import { TransactionContext } from "./context/transContext";
 
 import { Header } from "./components/Header";
 import { Balance } from "./components/Balance";
+import { IncomeExpense } from "./components/IncomeExpense";
 
 function App() {
   let { transactions } = useContext(TransactionContext);
@@ -51,17 +52,10 @@ function App() {
       {/* Balance component End */}
 
       {/* Income expense component start */}
-      <div className="d-flex justify-content-around rounded mybg">
-        <h3>
-          <span className="text-capitalize  myFont2">income</span>
-          <br />
-          <span className="text-primary myFont2">${getIncome()}</span>
-        </h3>
-        <h3>
-          <span class="text-capitalize myFont2">expense</span> <br />
-          <span className="text-danger myFont2">${getExpense()}</span>
-        </h3>
-      </div>
+      <IncomeExpense
+        getIncome={getIncome()}
+        getExpense={getExpense()}
+      ></IncomeExpense>
 
       {/* Income expense component end*/}
 
