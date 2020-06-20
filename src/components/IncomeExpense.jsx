@@ -7,7 +7,7 @@ export const IncomeExpense = ({ getExpense, getIncome }) => {
         <h3>
           <span className="text-capitalize  myFont2">income</span>
           <br />
-          <span className="text-primary myFont2">${getIncome}</span>
+          <span className="text-success myFont2">${getIncome}</span>
         </h3>
         <h3>
           <span class="text-capitalize myFont2">expense</span> <br />

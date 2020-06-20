@@ -9,16 +9,27 @@ export const History = ({ transactions }) => {
           return (
             <li
               key={ind}
-              className="list-group-item mb-2 d-flex justify-content-between align-items-center py-1"
+              className="list-group-item mb-2 d-flex justify-content-between align-items-center py-1 text-capitalize pr-0 pl-3  "
             >
-              <span className="myFont font-size">{transObj.desc}</span>
-              <span
-                className={`badge badge-${
-                  transObj.amount > 0 ? "primary " : "danger "
-                } badge-pill py-1 px-3 my-1 myFont2 font-size`}
-              >
-                ${transObj.amount}
+              <span className="myFont6 font-weight-bold font-size">
+                {transObj.desc}
               </span>
+              <div>
+                <span
+                  className={`badge badge-${
+                    transObj.amount > 0 ? "success " : "danger "
+                  } badge-pill py-1 px-3 my-1 myFont2 font-size`}
+                >
+                  ${transObj.amount}
+                </span>
+                <span
+                  className={`badge badge-${
+                    transObj.amount > 0 ? "success" : "danger"
+                  } mx-2 py-2 px-2 delete-btn`}
+                >
+                  x
+                </span>
+              </div>
             </li>
           );
         })}

@@ -43,29 +43,17 @@ function App() {
 
   return (
     <div className="container py-3 my-4">
-      {/* Header component start */}
       <Header></Header>
-      {/* Header component End */}
 
-      {/* Balance component start */}
       <Balance getIncome={getIncome()} getExpense={getExpense()}></Balance>
 
-      {/* Balance component End */}
-
-      {/* Income expense component start */}
       <IncomeExpense
         getIncome={getIncome()}
         getExpense={getExpense()}
       ></IncomeExpense>
 
-      {/* Income expense component end*/}
-
-      {/* History  component start*/}
       <History transactions={transactions}></History>
 
-      {/* History  component end*/}
-
-      {/* Transaction  component start*/}
       <AddTrasaction
         handleAddition={handleAddition}
         newDesc={newDesc}
@@ -73,7 +61,6 @@ function App() {
         newAmount={newAmount}
         setAmount={setAmount}
       ></AddTrasaction>
-      {/* Transaction  component end*/}
     </div>
   );
 }

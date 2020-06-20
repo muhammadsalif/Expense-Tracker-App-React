@@ -8,17 +8,18 @@ export const AddTrasaction = ({
   setAmount,
 }) => {
   return (
-    <div>
-      <h3>Add new Transaction</h3>
-      <hr></hr>
+    <div className="mt-2">
+      <h3 className="border-bottom border-secondary pb-2 text-capitalize myFont">
+        Add new Transaction
+      </h3>
 
       <form onSubmit={handleAddition}>
         <div className="form-group">
-          <label className="w-100">
+          <label className="w-100 text-capitalize myFont2 font-size">
             Enter description
             <input
               value={newDesc}
-              className="form-control"
+              className="form-control text-capitalize myFont6 font-size font-weight-bold"
               htmlFor="text"
               placeholder="Enter Text..."
               required
@@ -28,11 +29,11 @@ export const AddTrasaction = ({
         </div>
 
         <div className="form-group ">
-          <label className="w-100">
+          <label className="w-100 text-capitalize myFont2 font-size">
             enter Amount
             <input
               value={newAmount}
-              className="form-control "
+              className="form-control text-capitalize myFont6 font-size font-weight-bold"
               htmlFor="amount"
               placeholder="Enter Amount..."
               required
