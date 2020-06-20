@@ -42,25 +42,27 @@ function App() {
   };
 
   return (
-    <div className="container py-3 my-4">
-      <Header></Header>
+    <div className="row">
+      <div className="myCol mt-2 py-3 col-10 col-sm-7 col-md-6 col-lg-4 mx-auto">
+        <Header></Header>
 
-      <Balance getIncome={getIncome()} getExpense={getExpense()}></Balance>
+        <Balance getIncome={getIncome()} getExpense={getExpense()}></Balance>
 
-      <IncomeExpense
-        getIncome={getIncome()}
-        getExpense={getExpense()}
-      ></IncomeExpense>
+        <IncomeExpense
+          getIncome={getIncome()}
+          getExpense={getExpense()}
+        ></IncomeExpense>
 
-      <History transactions={transactions}></History>
+        <History transactions={transactions}></History>
 
-      <AddTrasaction
-        handleAddition={handleAddition}
-        newDesc={newDesc}
-        setDesc={setDesc}
-        newAmount={newAmount}
-        setAmount={setAmount}
-      ></AddTrasaction>
+        <AddTrasaction
+          handleAddition={handleAddition}
+          newDesc={newDesc}
+          setDesc={setDesc}
+          newAmount={newAmount}
+          setAmount={setAmount}
+        ></AddTrasaction>
+      </div>
     </div>
   );
 }
