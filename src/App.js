@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { TransactionContext } from "./context/transContext";
 
 import { Header } from "./components/Header";
+import { Balance } from "./components/Balance";
 
 function App() {
   let { transactions } = useContext(TransactionContext);
@@ -45,10 +46,8 @@ function App() {
       {/* Header component End */}
 
       {/* Balance component start */}
-      <h3>
-        <span className="text-capitalize   myFont">your balance</span> <br />{" "}
-        <span class="text-dark myFont3">${getIncome() + getExpense()}</span>
-      </h3>
+      <Balance getIncome={getIncome()} getExpense={getExpense()}></Balance>
+
       {/* Balance component End */}
 
       {/* Income expense component start */}
@@ -78,7 +77,7 @@ function App() {
               >
                 <span className="myFont font-size">{transObj.desc}</span>
                 <span
-                  className={`\$badge badge-${
+                  className={`badge badge-${
                     transObj.amount > 0 ? "primary " : "danger "
                   } badge-pill py-1 px-3 my-1 myFont2 font-size`}
                 >
