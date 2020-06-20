@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Balance } from "./components/Balance";
 import { IncomeExpense } from "./components/IncomeExpense";
 import { AddTrasaction } from "./components/AddTrasaction";
+import { History } from "./components/History";
 
 function App() {
   let { transactions, addTransaction } = useContext(TransactionContext);
@@ -60,28 +61,7 @@ function App() {
       {/* Income expense component end*/}
 
       {/* History  component start*/}
-      <div class="mt-3">
-        <h3 className="pb-2 border-secondary myFont border-bottom">History</h3>
-        <ul className="list-group mt-3">
-          {transactions.map((transObj, ind) => {
-            return (
-              <li
-                key={ind}
-                className="list-group-item mb-2 d-flex justify-content-between align-items-center py-1"
-              >
-                <span className="myFont font-size">{transObj.desc}</span>
-                <span
-                  className={`badge badge-${
-                    transObj.amount > 0 ? "primary " : "danger "
-                  } badge-pill py-1 px-3 my-1 myFont2 font-size`}
-                >
-                  ${transObj.amount}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <History transactions={transactions}></History>
 
       {/* History  component end*/}
 
