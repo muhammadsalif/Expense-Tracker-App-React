@@ -2,7 +2,7 @@ import React from "react";
 
 export const History = ({ transactions }) => {
   return (
-    <div class="mt-3">
+    <div className="mt-3">
       <h3 className="pb-2 border-secondary myFont border-bottom">History</h3>
       <ul className="list-group mt-3">
         {transactions.map((transObj, ind) => {

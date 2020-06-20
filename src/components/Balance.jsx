@@ -5,7 +5,7 @@ export const Balance = ({ getIncome, getExpense }) => {
     <div>
       <h3>
         <span className="text-capitalize   myFont">your balance</span> <br />{" "}
-        <span class="text-dark myFont3">${getIncome + getExpense}</span>
+        <span className="text-dark myFont3">${getIncome + getExpense}</span>
       </h3>
     </div>
   );
