@@ -78,7 +78,7 @@ function App() {
               >
                 <span className="myFont font-size">{transObj.desc}</span>
                 <span
-                  className={`\$badge badge-${
+                  className={`badge badge-${
                     transObj.amount > 0 ? "primary " : "danger "
                   } badge-pill py-1 px-3 my-1 myFont2 font-size`}
                 >
