@@ -2,8 +2,8 @@ import React, { createContext, useReducer } from "react";
 import TransactionReducer from "../reducer/transReducer";
 
 const initialTransactions = [
-  { transId: 1, amount: 500, desc: "Cash" },
-  { transId: 2, amount: -300, desc: "Book" },
+  // { transId: 1, amount: 500, desc: "Cash" },
+  // { transId: 2, amount: -300, desc: "Book" },
   // { amount: 100, desc: "Cash" },
 ];
 
