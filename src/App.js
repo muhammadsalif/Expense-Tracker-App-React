@@ -11,15 +11,18 @@ import { AddTrasaction } from "./components/AddTrasaction";
 import { History } from "./components/History";
 
 function App() {
-  let { transactions, addTransaction } = useContext(TransactionContext);
+  let { transactions, addTransaction ,delTransaction } = useContext(TransactionContext);
   let [newDesc, setDesc] = useState("");
   let [newAmount, setAmount] = useState(0);
+  let [transId,setTransId]=useState(0)
 
   const handleAddition = (e) => {
     e.preventDefault();
+    setTransId(transId+1);
     addTransaction({
       amount: Number(newAmount),
       desc: newDesc,
+      transId:transId
     });
     setDesc("");
     setAmount(0);
@@ -53,7 +56,7 @@ function App() {
           getExpense={getExpense()}
         ></IncomeExpense>
 
-        <History transactions={transactions}></History>
+        <History transactions={transactions} delTransaction={delTransaction}></History>
 
         <AddTrasaction
           handleAddition={handleAddition}

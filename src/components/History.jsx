@@ -1,6 +1,6 @@
 import React from "react";
 
-export const History = ({ transactions }) => {
+export const History = ({ transactions, delTransaction }) => {
   return (
     <div className="mt-3">
       <h3 className="pb-2 border-secondary myFont border-bottom">History</h3>
@@ -26,6 +26,7 @@ export const History = ({ transactions }) => {
                   className={`badge badge-${
                     transObj.amount > 0 ? "success" : "danger"
                   } mx-2 py-2 px-2 delete-btn`}
+                  onClick={() => delTransaction({ transId: transObj.transId })}
                 >
                   x
                 </span>
